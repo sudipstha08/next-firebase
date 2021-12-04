@@ -1,6 +1,8 @@
 import Head from 'next/head'
+import { API } from '../utils/api'
 
 export default function Home() {
+  API.get('/api/blog').then(data => console.log('dataaa', data))
   return (
     <div className="home">
       <Head>
