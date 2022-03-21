@@ -85,35 +85,15 @@ const Container = styled.div`
 
 const UsersPage = () => {
   const [users, setUsers] = useState<any>([])
-  const [count, setCount] = useState(20)
+  const [count] = useState(20)
   const [start, setStart] = useState(1)
   const [msg, setMessage] = useState('')
-  // constructor(props) {
-
-  //   super(props)
-
-  //   this.state = {
-  //     users:[],
-  //     count: 20,
-  //     start: 1,
-  //     msg:''
-  //   }
-
-  //   this.handleDelete = this.handleDelete.bind(this)
-  //   this.fetchNextUsers = this.fetchNextUsers.bind(this)
-  // }
-
-  // componentDidMount() {
-  //   this.fetchRandomUsers()
-  // }
 
   const fetchRandomUsers = () => {
     axios
       .get(`https://randomuser.me/api/?results=${count}&start=${start}`)
       .then(response => {
-        // this.setState({ users: response.data.results })
         setUsers(response.data.results)
-        // console.log(response.data.results)
       })
   }
 
@@ -130,16 +110,14 @@ const UsersPage = () => {
   }
 
   const fetchNextUsers = () => {
-    // this.setState({start: this.state.start + this.state.count})
     setStart(start + count)
     axios
       .get(`https://randomuser.me/api/?results=${count}&start=${start}`)
       .then(response => {
-        // this.setState({ users: this.state.users.concat(response.data.results) })
         setUsers(users.concat(response.data.results))
       })
   }
-  // <li></li>
+
   return (
     <Container className="images">
       <InfinitScroll
