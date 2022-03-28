@@ -19,3 +19,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 | `axios`           | promise based HTTP client  |
 | `react-query`     | data fetching library      |
 | `eslint/prettier` | linting                    |
+
+
+1. https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart

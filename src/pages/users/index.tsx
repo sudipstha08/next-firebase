@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import UserCard from '../../components/molecules/UserCard'
 import axios from 'axios'
+import { Loader } from '../../components'
 import InfinitScroll from 'react-infinite-scroll-component'
 import styled from 'styled-components'
 
 const Container = styled.div`
+  margin-top: 2rem;
   .listStyle {
     max-width: 300px;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 40px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .flagIcon {
@@ -120,11 +129,12 @@ const UsersPage = () => {
 
   return (
     <Container className="images">
+      <h2 className="title">Infinite Scroll Users List</h2>
       <InfinitScroll
         dataLength={users.length}
         next={fetchNextUsers}
         hasMore={true}
-        loader={<h4>Loading ... </h4>}
+        loader={<Loader />}
         endMessage={msg}
       >
         <ul>
