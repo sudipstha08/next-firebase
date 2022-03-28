@@ -97,13 +97,16 @@ const UsersPage = () => {
   const [count] = useState(20)
   const [start, setStart] = useState(1)
   const [msg, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const fetchRandomUsers = () => {
-    axios
+  const fetchRandomUsers = async () => {
+    await setLoading(true)
+    await axios
       .get(`https://randomuser.me/api/?results=${count}&start=${start}`)
       .then(response => {
         setUsers(response.data.results)
       })
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -118,13 +121,15 @@ const UsersPage = () => {
     }
   }
 
-  const fetchNextUsers = () => {
+  const fetchNextUsers = async () => {
+    await setLoading(true)
     setStart(start + count)
-    axios
+    await axios
       .get(`https://randomuser.me/api/?results=${count}&start=${start}`)
       .then(response => {
         setUsers(users.concat(response.data.results))
       })
+    setLoading(false)
   }
 
   return (
