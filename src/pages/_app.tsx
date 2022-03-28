@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import 'antd/dist/antd.css'
 import '../styles/globals.css'
 
 const queryClient = new QueryClient()

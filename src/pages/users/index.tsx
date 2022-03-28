@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import UserCard from '../../components/molecules/UserCard'
+import { UserCard, ShadowLoader, Loader } from '../../components'
 import axios from 'axios'
-import { Loader } from '../../components'
+
 import InfinitScroll from 'react-infinite-scroll-component'
 import styled from 'styled-components'
 
@@ -164,6 +164,13 @@ const UsersPage = () => {
               />
             </li>
           ))}
+          <ShadowLoader loading />
+          <ShadowLoader loading />
+          <ShadowLoader loading />
+          <ShadowLoader loading />
+          <ShadowLoader loading />
+          <ShadowLoader loading />
+          <ShadowLoader loading />
         </ul>
       </InfinitScroll>
     </Container>
