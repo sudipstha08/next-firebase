@@ -169,13 +169,17 @@ const UsersPage = () => {
               />
             </li>
           ))}
-          <ShadowLoader loading />
-          <ShadowLoader loading />
-          <ShadowLoader loading />
-          <ShadowLoader loading />
-          <ShadowLoader loading />
-          <ShadowLoader loading />
-          <ShadowLoader loading />
+          {loading && (
+            <>
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+            </>
+          )}
         </ul>
       </InfinitScroll>
     </Container>
