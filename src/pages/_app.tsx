@@ -11,7 +11,8 @@ const queryClient = new QueryClient({ defaultOptions: {} })
 
 function MyApp({ Component, pageProps }: AppProps) {
   const getTokens = async () => {
-    getToken(messaging, {
+    await messaging.requestPermission()
+    await getToken(messaging, {
       vapidKey: process.env.NEXT_PUBLIC_FIREBASE_VAPID_KEY,
     })
       .then((currentToken: any) => {

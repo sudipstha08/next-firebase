@@ -1,9 +1,9 @@
 import {
-  AndroidConfig,
-  WebpushConfig,
-  ApnsConfig,
+  //   AndroidConfig,
+  //   WebpushConfig,
+  //   ApnsConfig,
   FcmOptions,
-} from 'firebase/firebase-messaging'
+} from 'firebase/messaging'
 
 export interface Message {
   title: string
@@ -17,8 +17,8 @@ export interface BaseMessage {
     [key: string]: string
   }
   notification?: Notification
-  android?: AndroidConfig
-  webpush?: WebpushConfig
-  apns?: ApnsConfig
+  //   android?: AndroidConfig
+  //   webpush?: WebpushConfig
+  //   apns?: ApnsConfig
   fcmOptions?: FcmOptions
 }
