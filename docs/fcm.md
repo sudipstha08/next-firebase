@@ -18,3 +18,5 @@
 - https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
 - https://metacognitive.me/implementing-push-notifications-with-firebase/
 - Based on https://firebase.google.com/docs/cloud-messaging/js/client
+- https://firebase.google.com/docs/cloud-messaging/concept-options#credentials
+- 

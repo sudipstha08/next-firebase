@@ -5,7 +5,7 @@ importScripts('https://www.gstatic.com/firebasejs/8.2.0/firebase-messaging.js')
 
 firebase.initializeApp({
   messagingSenderId: '454395181950',
-})
+git })
 
 const initMessaging = firebase.messaging()
 

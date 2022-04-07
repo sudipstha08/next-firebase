@@ -7,7 +7,7 @@ import { getToken } from 'firebase/messaging'
 import { useEffect } from 'react'
 import { messaging } from '../utils/firebase'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({ defaultOptions: {} })
 
 function MyApp({ Component, pageProps }: AppProps) {
   const getTokens = async () => {

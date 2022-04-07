@@ -57,11 +57,15 @@ export default class MyDocument extends Document {
             href="https://vjs.zencdn.net/7.17.0/video-js.css"
             rel="stylesheet"
           />
+          <script
+            src="https://vjs.zencdn.net/7.17.0/video.min.js"
+            defer
+            async
+          ></script>
         </Head>
         <body>
           <Main />
           <NextScript />
-          <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
         </body>
       </Html>
     )
