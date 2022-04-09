@@ -35,3 +35,32 @@
 - https://firebase.google.com/docs/cloud-messaging/concept-options#credentials
 - https://firebase.google.com/docs/cloud-messaging/manage-tokens
 - https://notifee.app/react-native/docs/integrations/fcm
+
+```
+ const res = await getMessaging().send({
+            android: {
+               notification: {
+                  icon: '',
+               },
+            },
+            webpush: {
+               notification: {
+                  ...msg,
+                  icon: 'https://test.com/favicon.png',
+                  requireInteraction: msg.requireInteraction ?? false,
+                  actions: [
+                     {
+                        title: 'Open',
+                        action: 'open',
+                     },
+                  ],
+                  data: {
+                     link: msg.link,
+                  },
+               },
+            },
+            token: fcmRegistrationToken,
+            fcmOptions: {},
+         })
+         return res
+```
