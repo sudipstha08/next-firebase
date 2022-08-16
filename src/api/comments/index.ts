@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { comments } from '../../../utils/data'
+import { comments } from '../../utils/data'
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { commentId } = req.query
