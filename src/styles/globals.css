@@ -1,3 +1,9 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 html,
 body {
   padding: 0;
@@ -17,4 +23,21 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+.theme-picker-dark {
+  mask-image: url("/ic-theme-dark.png");
+  mask-size: 40px 40px;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  width: 30px;
+  cursor: pointer;
+}
+.theme-picker-light {
+  mask-image: url("/ic-theme-light.svg");
+  mask-size: 40px 40px;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  width: 30px;
+  cursor: pointer;
 }
