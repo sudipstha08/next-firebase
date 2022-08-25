@@ -1,8 +1,19 @@
+/* eslint-disable no-console */
 import Head from 'next/head'
 import { API } from '../utils/api'
 
 export default function Home() {
-  API.get('/api/blog').then(data => console.log('dataaa', data))
+  const test = async () => {
+    try {
+      const data = await API.get('/api/comments')
+      console.log('data', data)
+    } catch (err) {
+      console.log('err', err)
+    }
+  }
+
+  test()
+
   return (
     <div className="home">
       <Head>

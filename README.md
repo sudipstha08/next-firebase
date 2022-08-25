@@ -19,3 +19,4 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 | `axios`           | promise based HTTP client  |
 | `react-query`     | data fetching library      |
 | `eslint/prettier` | linting                    |
+

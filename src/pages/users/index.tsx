@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import UserCard from '../../components/molecules/UserCard'
+import { UserCard, ShadowLoader, Loader } from '../../components'
 import axios from 'axios'
+
 import InfinitScroll from 'react-infinite-scroll-component'
 import styled from 'styled-components'
 
 const Container = styled.div`
+  margin-top: 2rem;
   .listStyle {
     max-width: 300px;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 40px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .flagIcon {
@@ -88,13 +97,16 @@ const UsersPage = () => {
   const [count] = useState(20)
   const [start, setStart] = useState(1)
   const [msg, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const fetchRandomUsers = () => {
-    axios
+  const fetchRandomUsers = async () => {
+    await setLoading(true)
+    await axios
       .get(`https://randomuser.me/api/?results=${count}&start=${start}`)
       .then(response => {
         setUsers(response.data.results)
       })
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -109,22 +121,25 @@ const UsersPage = () => {
     }
   }
 
-  const fetchNextUsers = () => {
+  const fetchNextUsers = async () => {
+    await setLoading(true)
     setStart(start + count)
-    axios
+    await axios
       .get(`https://randomuser.me/api/?results=${count}&start=${start}`)
       .then(response => {
         setUsers(users.concat(response.data.results))
       })
+    setLoading(false)
   }
 
   return (
     <Container className="images">
+      <h2 className="title">Infinite Scroll Users List</h2>
       <InfinitScroll
         dataLength={users.length}
         next={fetchNextUsers}
         hasMore={true}
-        loader={<h4>Loading ... </h4>}
+        loader={<Loader />}
         endMessage={msg}
       >
         <ul>
@@ -154,6 +169,17 @@ const UsersPage = () => {
               />
             </li>
           ))}
+          {loading && (
+            <>
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+              <ShadowLoader loading />
+            </>
+          )}
         </ul>
       </InfinitScroll>
     </Container>
