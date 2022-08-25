@@ -5,9 +5,14 @@ const CallbackPage = () => {
   const [number, setNumber] = useState(1)
   const [dark, setDark] = useState(false)
 
-  // useCallback only recreates this func when number changes and prevents rerender
-  // useMemo takes a func and it returns the return value of the func while
-  // the useCallback Returns and stores the actual function itself in a variable) and allows to pass parameters
+  /**
+   * useCallback only recreates this func when number changes and prevents rerender
+   * */
+  /**
+   * useMemo takes a func and it returns the return value of the func while
+   * the useCallback returns and stores the actual function itself in a variable) and
+   * allows to pass parameters
+   **/
   const getItems = useCallback(
     incrementor => {
       return [
