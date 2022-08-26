@@ -5,7 +5,6 @@ import { weatherStore } from '../../../store'
 
 export const Cities = () => {
   const snapshot = useSnapshot(weatherStore)
-  console.log('cities')
   return (
     <div className="cities">
       Cities

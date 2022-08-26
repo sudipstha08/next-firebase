@@ -1,4 +1,6 @@
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
@@ -22,7 +24,7 @@ ul {
 }
 
 .theme-picker-dark {
-  mask-image: url("/ic-theme-dark.png");
+  mask-image: url("/ic-theme-dark.svg");
   mask-size: 40px 40px;
   mask-repeat: no-repeat;
   mask-position: center;

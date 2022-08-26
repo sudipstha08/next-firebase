@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useTheme } from '../../store/themeStore'
+import { toRed, toYellow, useTheme } from '../../store/themeStore'
 
 export const ThemedElements = () => {
   const themeStore = useTheme()
@@ -8,9 +8,9 @@ export const ThemedElements = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (themeStore[themeStore.mode].colors.bg400 === 'bg-red-200') {
-        // toYellow()
+        toYellow()
       } else {
-        //   toRed()
+        toRed()
       }
     }, 1000)
     return () => clearInterval(interval)
