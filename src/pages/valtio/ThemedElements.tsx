@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import { useTheme } from '../../store/valtio'
+import { useTheme } from '../../store/themeStore'
+
 export const ThemedElements = () => {
   const themeStore = useTheme()
   const theme = themeStore[themeStore.mode]

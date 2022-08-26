@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme, changeTheme } from '../../store/valtio'
+import { useTheme, changeTheme } from '../../store/themeStore'
 import { ThemedElements } from './ThemedElements'
 
 const Valtio = () => {

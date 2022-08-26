@@ -1,13 +1,27 @@
 /* eslint-disable no-console */
 import type { AppProps } from 'next/app'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import 'antd/dist/antd.css'
 import '../styles/globals.css'
+
+// 1. Import the extendTheme function
 // import { getToken } from 'firebase/messaging'
 // import { useEffect } from 'react'
 // import { messaging } from '../utils/firebase'
 
 const queryClient = new QueryClient({ defaultOptions: {} })
+
+// 2. Extend the theme to include custom colors, fonts, etc
+const colors = {
+  brand: {
+    900: '#1a365d',
+    800: '#153e75',
+    700: '#2a69ac',
+  },
+}
+
+export const theme = extendTheme({ colors })
 
 function MyApp({ Component, pageProps }: AppProps) {
   // const getTokens = async () => {
@@ -38,7 +52,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
+        <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
       </QueryClientProvider>
     </>
   )

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react'
-
+import { motion } from 'framer-motion'
 const CommentsPage = () => {
   const [comments, setComments] = useState([])
   const [comment, setComment] = useState('')
@@ -49,6 +49,7 @@ const CommentsPage = () => {
           <button onClick={() => deleteComment(comment.id)}>Delete</button>
         </div>
       ))}
+      <motion.div animate={{ opacity: comment ? 1 : 0 }} />
     </div>
   )
 }
