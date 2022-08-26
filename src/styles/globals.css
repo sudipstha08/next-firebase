@@ -41,3 +41,9 @@ ul {
   width: 30px;
   cursor: pointer;
 }
+
+button {
+  padding: 5;
+  background: blue;
+  color: #fff;
+}

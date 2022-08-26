@@ -2,11 +2,12 @@ import React, { FC } from 'react'
 
 interface IProps {
   label: string
+  onClick: () => void
 }
-const Button: FC<IProps> = ({ label }) => {
+const Button: FC<IProps> = ({ label, onClick }) => {
   return (
     <div>
-      <button>{label}</button>
+      <button onClick={onClick}>{label}</button>
     </div>
   )
 }
