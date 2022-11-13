@@ -1,8 +1,6 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 html,
 body {
@@ -26,7 +24,7 @@ ul {
 }
 
 .theme-picker-dark {
-  mask-image: url("/ic-theme-dark.png");
+  mask-image: url("/ic-theme-dark.svg");
   mask-size: 40px 40px;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -41,3 +39,49 @@ ul {
   width: 30px;
   cursor: pointer;
 }
+
+button {
+  padding: 5;
+  background: blue;
+  color: #fff;
+}
+
+/*
+* Weather CSS for valtio
+**/
+.weather-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 0.5rem;
+}
+
+.cities {
+  background-color: lightgreen;
+  padding: 0.5rem;
+}
+
+.search {
+  background-color: lightblue;
+  padding: 0.5rem;
+}
+
+.search input {
+  width: 90%;
+  padding: 0.2rem;
+  font-size: x-large;
+  border-radius: 0.4rem;
+  border: 0.5px solid #aaa;
+}
+
+.search button {
+  width: 100%;
+  padding: 0.2rem;
+  font-size: x-large;
+  border-radius: 0.4rem;
+  border: 0.5px solid #aaa;
+  margin-top: 1rem;
+}
+/***
+* Weather CSS end
+*/
+

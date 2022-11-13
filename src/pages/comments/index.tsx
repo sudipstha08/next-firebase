@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const CommentsPage = () => {
   const [comments, setComments] = useState([])
@@ -33,23 +34,26 @@ const CommentsPage = () => {
   }
 
   return (
-    <div>
-      <input
-        type="text"
-        name="text"
-        id=""
-        value={comment}
-        onChange={e => setComment(e.target.value)}
-      />
-      <button onClick={submitComment}>Submit Comment</button>
-      <button onClick={fetchComments}>Load Comment.</button>
-      {comments.map((comment: any) => (
-        <div key={comment?.id}>
-          {comment?.id}. {comment?.text}
-          <button onClick={() => deleteComment(comment.id)}>Delete</button>
-        </div>
-      ))}
-    </div>
+    <>
+      <div>
+        <input
+          type="text"
+          name="text"
+          id=""
+          value={comment}
+          onChange={e => setComment(e.target.value)}
+        />
+        <button onClick={submitComment}>Submit Comment</button>
+        <button onClick={fetchComments}>Load Comment.</button>
+        {comments.map((comment: any) => (
+          <div key={comment?.id}>
+            {comment?.id}. {comment?.text}
+            <button onClick={() => deleteComment(comment.id)}>Delete</button>
+          </div>
+        ))}
+      </div>
+      <motion.div animate={{ opacity: comment ? 1 : 1 }} />
+    </>
   )
 }
 

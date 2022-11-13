@@ -61,3 +61,13 @@ export const useTheme = () => useSnapshot(themeStore)
 export const changeTheme = (mode: 'light' | 'dark') => {
   themeStore.mode = mode
 }
+
+export const toRed = () => {
+  themeStore[themeStore.mode].colors.bg400 = 'bg-red-200'
+  themeStore[themeStore.mode].colors.text400 = 'text-red-400'
+}
+
+export const toYellow = () => {
+  themeStore[themeStore.mode].colors.bg400 = 'bg-yellow-200'
+  themeStore[themeStore.mode].colors.text400 = 'text-yellow-400'
+}
