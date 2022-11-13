@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import Head from 'next/head'
 import { ReactNode, useState } from 'react'
-import { isTemplateSpan } from 'typescript'
 import { API } from '../utils/api'
 
 // Functional Props
