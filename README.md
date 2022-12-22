@@ -1,7 +1,6 @@
 ## Next.js & Firebase
 
 ![Release](https://img.shields.io/npm/v/next-firebase)
-![Downloads](https://img.shields.io/npm/dw/next-firebase)
 [![License](https://img.shields.io/:license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT)
 
 ## Basic commands :wrench:
