@@ -1,1 +1,1 @@
-export const hooks = 'hooks'
+export { useUpdateEffect } from './UseUpdateEffect'
