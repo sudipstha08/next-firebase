@@ -2,7 +2,7 @@
 import type { AppProps } from 'next/app'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import 'antd/dist/antd.css'
+import Head from 'next/head'
 import '../styles/globals.css'
 
 // 1. Import the extendTheme function
@@ -51,6 +51,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        {/* Script for google identity service*/}
+        <script src="https://accounts.google.com/gsi/client" async defer />
+      </Head>
       <QueryClientProvider client={queryClient}>
         <ChakraProvider theme={theme}>
           <Component {...pageProps} />
