@@ -1,10 +1,13 @@
+/* eslint-disable no-console */
 import React, { useEffect, FC } from 'react'
+import jwt_decode from 'jwt-decode'
 import { config } from '../../utils'
 
 const LoginPage: FC = () => {
   const handleCallbackResponse = response => {
-    // eslint-disable-next-line no-console
     console.log('Encoded JWT ID Token: ', response?.credential)
+    const googleUser = jwt_decode(response.credential)
+    console.log('GOOGLE USER: ', googleUser)
   }
 
   useEffect(() => {
@@ -12,10 +15,9 @@ const LoginPage: FC = () => {
     /*
      * global google
      */
-    // eslint-disable-next-line no-console
-    console.log('doducmm =>', window?.['google'])
+    console.log('window google onject =>', google)
 
-    window?.['google']?.accounts?.id.initialize({
+    google?.accounts?.id.initialize({
       client_id: config.google.clientID,
       callback: handleCallbackResponse,
     })
