@@ -1,13 +1,17 @@
 /* eslint-disable no-console */
-import React, { useEffect, FC } from 'react'
+import React, { useEffect, FC, useState } from 'react'
 import jwt_decode from 'jwt-decode'
 import { config } from '../../utils'
 
 const LoginPage: FC = () => {
+  const [user, setUser] = useState<any>(null)
+
   const handleCallbackResponse = response => {
     console.log('Encoded JWT ID Token: ', response?.credential)
     const googleUser = jwt_decode(response.credential)
     console.log('GOOGLE USER: ', googleUser)
+    setUser(googleUser)
+    document.getElementById('signInDiv')!.hidden = true
   }
 
   useEffect(() => {
@@ -29,11 +33,28 @@ const LoginPage: FC = () => {
         size: 'large',
       },
     )
+
+    // For google One tap login
+    google?.accounts?.id.prompt()
   }, [])
+
+  const handleSignout = () => {
+    setUser(null)
+    document.getElementById('signInDiv')!.hidden = false
+  }
 
   return (
     <div>
       <div id="signInDiv" />
+      {user && Object?.keys(user)?.length != 0 && (
+        <button onClick={handleSignout}>SignOut</button>
+      )}
+      {user && (
+        <div>
+          <img src={user.picture} alt="google" />
+          <h4>{user.name}</h4>
+        </div>
+      )}
     </div>
   )
 }
