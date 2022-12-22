@@ -8,23 +8,30 @@ const LoginPage: FC = () => {
   }
 
   useEffect(() => {
+    // This will remove the lint UNDEFINED error
     /*
      * global google
      */
-    google.accounts.id.initiaize({
+    // eslint-disable-next-line no-console
+    console.log('doducmm =>', window?.['google'])
+
+    window?.['google']?.accounts?.id.initialize({
       client_id: config.google.clientID,
       callback: handleCallbackResponse,
     })
 
-    google.accounts.id.renderButton(document.getElementById('signInDiv'), {
-      theme: 'outline',
-      size: 'large',
-    })
+    window?.['google']?.accounts?.id.renderButton(
+      document.getElementById('signInDiv'),
+      {
+        theme: 'outline',
+        size: 'large',
+      },
+    )
   }, [])
 
   return (
     <div>
-      <div id="signInDIv"></div>
+      <div id="signInDiv" />
     </div>
   )
 }

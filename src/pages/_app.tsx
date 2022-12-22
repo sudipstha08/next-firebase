@@ -2,6 +2,7 @@
 import type { AppProps } from 'next/app'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import Head from 'next/head'
 import 'antd/dist/antd.css'
 import '../styles/globals.css'
 
@@ -51,6 +52,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <script
+          src="https://accounts.google.com/gsi/client"
+          async
+          defer
+        ></script>
+      </Head>
       <QueryClientProvider client={queryClient}>
         <ChakraProvider theme={theme}>
           <Component {...pageProps} />
