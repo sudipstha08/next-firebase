@@ -1,22 +1,21 @@
-## Next.js TS template :books:
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Next.js & Firebase
 
 ## Basic commands :wrench:
 
-|     commands   |      description           |
-|----------------|----------------------------|
-| `yarn dev`     | run the development server |
-| `yarn install` | install dependencies       |
-| `yarn lint`	   | run linter                 |
-| `yarn remove`  | remove a package           |
-| `yarn build`   | build application          |
+| Commands         | Description                |
+| ---------------- | -------------------------- |
+| `yarn start-dev` | run the development server |
+| `yarn install`   | install dependencies       |
+| `yarn lint`      | run linter                 |
+| `yarn remove`    | remove a package           |
+| `yarn build`     | build application          |
 
 ## Tech Stacks :package:
 
-|     tech          |      description           |
-|-------------------|----------------------------|
-| `next`            | server side rendering      |
-| `axios`           | promise based HTTP client  |
-| `react-query`     | data fetching library      |
-| `eslint/prettier` | linting                    |
-
+| Techs             | Description                 |
+| ----------------- | --------------------------- |
+| `next`            | server side rendering       |
+| `axios`           | promise based HTTP client   |
+| `react-query`     | data fetching library       |
+| `eslint/prettier` | linting                     |
+| `firebase`        | Backend-as-a-Service (BAAS) |

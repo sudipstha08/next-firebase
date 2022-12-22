@@ -3,6 +3,6 @@
  */
 import Error from 'next/error'
 
-export default () => {
+export default function ErrorPage() {
   return <Error statusCode={404} />
 }
